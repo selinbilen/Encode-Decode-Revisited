@@ -1,4 +1,4 @@
-# Lab07 - Encode/Decode Revisited
+# Encode/Decode Revisited
 
 # Background
 
@@ -164,20 +164,3 @@ If we code our decode function properly, we should then see:
 This is a test
 >
 ```
-
-## Running the Lab
-
-With all of this background, solving the problem on the test should be much easier.  Notice that the encode program works by inserting extra, random, alphabetic characters in between the clear text characters of the input text. Specifically, if the first command line argument is "3", then encode will insert 0 characters between the first and second input, 1 between the second and third, and 2 between the 3rd and 4th.  Then encode will recycle, and insert 0 between the 4th and 5th characters, 1 between the 5th and 6th, and 2 between the 6th and 7th... and so on.
-
-Our decode function needs to remove these characters from the input.  But since decode is reading input using getchar, and writing output using putchar, the trick is to invoke getchar to consume both the real characters and the random characters, but *not* to invoke putchar on those random characters... only invoke putchar on the real characters.
-
-With this big hint, and with all the above background so you can understand what is going on, can you now write the decode.c function so that it will correctly decode text encoded by the encode function?
-
-## Submitting your Code
-
-When you are finished writing and debugging your decode.c code, make sure to commit and push your repository using git. Cut and paste the resulting hashCode into the Lab 07 submission area in the Lab Submissions folder under Content for CS-220 in myCourses. You may submit as many times as you wish up to the deadline of midnight tonight (Mar. 12), only the last submission will be graded.
-
-
-## Grading your Submission
-
-You will receive full credit for this lab if we can run `make test` and compile your code without warnings, and decode text encoded by encode correctly (using the same command line argument for both encode and decode.) We will run a couple of different invocations with different command line argument values to make sure your decode.c code works correctly. If not, you will get up to a five point deduction, depending on how often or how badly your code fails.
